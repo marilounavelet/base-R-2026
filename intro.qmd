@@ -86,3 +86,64 @@ typeof(typeof)
 typeof(class)
 ```
 
+## Vector creation tools 
+
+### Sequences
+```{r}
+c(1, 2, 3, 4)
+# pb : not integers, long to do, pt stocker bcp d'info si on va de 1 à 1M
+```
+
+
+
+```{r}
+1:10 
+typeof(1:3)
+typeof(c(1, 2, 3))
+```
+
+```{r}
+-3:10
+10:2
+```
+
+Alternative, the 'seq' function. 
+
+```{r}
+seq(-3, 10)
+seq(10,2)
+```
+
+Slightly more flexible. 
+
+```{r}
+seq(1, 27, 3)
+# on peut décider d'un pas (ici 3)
+typeof(seq(1, 3))
+```
+
+Beware of inconsistent arguments. 
+
+```{r}
+seq(1, 5, -1)
+# not working, ici le pas doit être positif 
+```
+
+```{r}
+seq(from = 0, to = -5, by = -0.5)
+```
+
+```{r}
+seq(from = 0, to = 1, length.out = 10)
+```
+
+Basic application example. 
+
+```{r}
+x = seq(from = -pi, to = pi, length.out = 101)
+df_sin = data.frame(x = x) |>
+  mutate(y = sin(exp(x)))
+ggplot(df_sin, aes(x,y))+ 
+  geom_line()
+```
+
