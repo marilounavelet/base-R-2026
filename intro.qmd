@@ -199,3 +199,34 @@ x/sum(x)
 1) 'sum(x)' -> 6
 2) 6 -> c(6, 6, 6)
 3) 'x/c(6, 6, 6)' -> 'c(1/6, 2/6, 3/6)'
+
+
+## Advanced indexing 
+
+```{r}
+x = 3:9
+x[2]
+```
+
+```{r}
+x
+x[2:4] # on veut voir les éléments de 2 à 4
+x[seq(1, length(x), by = 2)] # on veut voir les éléments de 1 à la fin de la length mais avec un pas de 2
+```
+
+In general, 'x[y]' is interpreted the following way:
+1) if 'y' contains integer values, they are interpreted as indexed in 'x'
+2) if 'y' contains logical values, 'x[i]' is included in the output if 'y[i]' is 'TRUE'
+
+```{r}
+x = seq(-5, 11, by = 2)
+x
+x[c(#-1, 
+  0, 3, 1, 2, 5,# -2
+   10)]
+x > 0
+x[x > 0]
+x[c(TRUE, TRUE, FALSE)] # affiche les TRu, comme le vecteur est de longueur 3 pour être appliqué à un vecteur 9, il se répète 3 fois 
+x # ça n'a pas modifié x
+```
+
