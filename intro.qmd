@@ -8,6 +8,15 @@ format: html
 here::i_am("r101.Rproj")
 ```
 
+## Pushing a local repository to an empty remote 
+
+```{bash}
+#| eval: false
+got remote add origin https://github.com/marilounavelet/base-R-2026.git
+git branch -M main
+git push -u origin main
+```
+
 ## Variables
 
 A variable is the name of a data manipulated by R. 
