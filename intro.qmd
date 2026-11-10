@@ -230,3 +230,38 @@ x[c(TRUE, TRUE, FALSE)] # affiche les TRu, comme le vecteur est de longueur 3 po
 x # ça n'a pas modifié x
 ```
 
+## High level operations on vectors 
+
+### Statistics and aggregation operators 
+
+'min()', 'max()', 'mean()', etc. 
+
+### Ordering and matching 
+
+```{r}
+x = 10:-5
+x
+sort(x)
+```
+
+```{r}
+y = sample(1:10) # choiit un ordre aléatoire pour les valeurs du vecteur 
+y 
+sort(y)
+sort(y, decreasing = TRUE)
+```
+
+```{r}
+x = 10:-5
+x
+order(x) # donne l'indice de l'élément dans le vecteur d'origine à mettre à telle place pr que le vecteur d'origine soit trié dans l'ordre croissant 
+x[order(x)]
+```
+
+```{r}
+y = sample(1:10)
+y
+order(y) # donne l'indice de l'élément dans le vecteur d'origine à mettre à telle place pr que le vecteur d'origine soit trié dans l'ordre croissant 
+y[order(y)]
+```
+
