@@ -265,3 +265,26 @@ order(y) # donne l'indice de l'élément dans le vecteur d'origine à mettre à 
 y[order(y)]
 ```
 
+### Matching 
+
+'which' returns the indexes of 'TRUE' in 'x'
+-> which = "quels sont les indices qui..."
+
+```{r}
+y = sample(1:200, 10) # prend 10 valeurs aléatoires entre 1 et 200
+y
+max(y)
+y == max(y) # indique si c'est le max ou pas 
+# y[max(y)] ne fonctionne pas
+which(y == max(y))
+which(y >= max(y)/2)
+```
+
+In numerical contexts, 'TRUE' becomes 1 and 'FALSE' becomes O. 
+
+```{r}
+y = sample(1:200, 10) # prend 10 valeurs aléatoires entre 1 et 200
+y
+sum(u >= max(y)/2)
+```
+
