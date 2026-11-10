@@ -1,0 +1,79 @@
+---
+title: "Introduction to low level R"
+author: "Fabrice Rossi"
+format: html
+---
+
+```{r}
+here::i_am("r101.Rproj")
+```
+
+## Variables
+
+A variable is the name of a data manipulated by R. 
+
+```{r}
+foo <- 2.5
+```
+
+Three parts:
+
+1) `foo`: name of the variable
+2) `<-`: assignment operator (on the left the variable name, on the right the 
+  value). If you have bad taste, you can replace it by `=`
+3) `2.5`: the value
+
+```{python}
+#| eval: false
+#| include: false
+foo = 2.5
+```
+
+Basic numerical operations.
+
+```{r}
+12 / 4
+```
+
+Everywhere I would use a value, I can use instead a variable if the value of
+the variable is compatible with what is expected. 
+
+```{r}
+foo * 2
+```
+
+### Types
+
+Values (and therefore variables) have types. A type specifies what values are
+possible (like integers versus real numbers) and what operations can be computed
+on the values.
+
+- real numbers `2.5`, `-1.35e-3`
+- integers `135L` (for 135)
+- logical values `TRUE` and `FALSE`
+- strings (small texts) `"bla bla bla bla"` (between single or double quotes)
+- functions (to be covered later)
+
+```{r}
+135L / 2L
+2.5 > -1.2
+```
+
+```{r}
+1/0
+1/(-0)
+12/Inf
+Inf > 1e250
+Inf - Inf
+```
+
+```{r}
+typeof(foo)
+typeof(TRUE)
+typeof(135L)
+typeof(135)
+typeof("a text")
+typeof(typeof)
+typeof(class)
+```
+
